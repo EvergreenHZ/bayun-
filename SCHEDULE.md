@@ -28,6 +28,6 @@ Now it is the most exciting moment, and we will start implementing the concept o
 *Debugging! Debugging! Debugging!*
 
 
-I believe we will create a amazing website with our passions and enthusiasm, tenacity and perserverance.
+I believe we will create an amazing website with our passions and enthusiasm, tenacity and perserverance.
 
 THE END!
