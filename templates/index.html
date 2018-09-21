@@ -3,16 +3,25 @@
         <head>
                 <meta charset="UTF-8">
                 <title>Bayun</title>
-                <!-- <script src="/home/huaizhi/jquery/src/jquery" type="text/javascript"></script> -->
-                <!-- <script src="bayun.js"></script> -->
+
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script> 
+                <script src="/static/scripts/bayun.js"></script>
+                <!-- <script src="{{ url_for('static', filename = 'bayun.js') }}"></script> -->
+
         </head>
         <body>
-                <p> <img src="../images/scallet.jpg" alt="scallet"> </p>
-                <p> <img src="../images/JC.jpg" alt="jennifer connelly"> </p>
-                <p> <img src="images/scallet.jpg" alt="scallet"> </p>
-                <p> <img src="images/JC.jpg" alt="jennifer connelly"> </p>
-                <p> <img src="scallet.jpg" alt="scallet"> </p>
-                <p> <img src="JC.jpg" alt="jennifer connelly"> </p>
-                <p> <a href="SCHEDULE.md"><em>SCHEDULE</em></a></p>
+                <H1> Hello Tianping </H1>
+
+                <script type="text/javascript">
+                        $("H1").click(function() {
+                        alert("Hi");
+                        })
+                </script>
+
+                <H2> This is new Tian Ping </H2>
+
+                <p> <img id=scallet src="/static/images/scallet.jpg" alt="scallet"> </p>
+                <p> <img src="/static/images/JC.jpg" alt="jennifer connelly"> </p>
+                <p> <a href="/static/SCHEDULE.md"><em>SCHEDULE</em></a></p>
         </body>
 </html>
