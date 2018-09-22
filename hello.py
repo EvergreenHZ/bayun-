@@ -1,13 +1,16 @@
 from flask import Flask, render_template
-app = Flask('bayun')
+from flask_bootstrap import Bootstrap
 
-@app.route('/')
+app = Flask('bayun')
+bootstrap = Bootstrap(app)
+
+@app.route('/', methods=['GET', 'POST'])
 def index():
     return render_template('index.html')
 
-#@app.route('/images/<name>', methods=['GET', 'POST'])
-#def novel(name):
-#    return render_template('./templates/novel.html', name=name)
+@app.route('/static/novels/<name>', methods=['GET', 'POST'])
+def novel(name):
+    return render_template('novel.html', name=name)
 
 if __name__ == '__main__':
     app.run(debug=True)

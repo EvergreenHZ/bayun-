@@ -4,7 +4,9 @@
                 <meta charset="UTF-8">
                 <title>Bayun</title>
         </head>
+
         <body>
+                <script src="{{ url_for('static', filename = 'js/jquery.min.js') }}" ></script>
                 <H1> Hello Tianping </H1>
 
                 <script type="text/javascript">
@@ -18,8 +20,7 @@
                 <p> <img id=scallet src="/static/images/scallet.jpg" alt="scallet"> </p>
                 <p> <img src="/static/images/JC.jpg" alt="jennifer connelly"> </p>
                 <p> <a href="/static/res/SCHEDULE.md"><em>SCHEDULE</em></a></p>
+                <script src="{{ url_for('static', filename = 'js/bayun.js') }}" ></script>
         </body>
 
-        <script src="{{ url_for('static', filename = 'js/jquery.min.js') }}"></script>
-        <script src="{{ url_for('static', filename = 'js/bayun.js') }}"></script>
 </html>
