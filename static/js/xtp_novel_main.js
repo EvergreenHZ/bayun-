@@ -17,5 +17,6 @@ $("select").click(function(){
         let chap_branch = $(this).find(":selected").text();
         novel_path = novel_path + "-" + chap_branch;
         alert(novel_path);
-        window.location.href = novel_path;
+        //window.location.href = novel_path;
+        window.location.href = "http://www.baidu.com";
 });

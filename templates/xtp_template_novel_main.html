@@ -3,7 +3,7 @@
 {% block head %}
 <meta charset="utf-8">
 <title> BaYun </title>
-<link rel= "stylesheet" type= "text/css" href= "css/xtp_novel_main.css">
+<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static', filename = 'css/xtp_novel_main.css') }}">
 {% endblock %}
 
 
@@ -30,11 +30,7 @@
 {% endfor %}
 
 
-
-
-<script src="js/jquery.min.js" ></script>
-<script src="js/xtp_novel_main.js" ></script>
-
-
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}" ></script>
+<script src="{{ url_for('static', filename = 'js/xtp_novel_main.js') }}" ></script>
 
 {% endblock %}
