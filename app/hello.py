@@ -1,12 +1,14 @@
 from flask import Flask, render_template
 from flask_bootstrap import Bootstrap
 
-app = Flask('bayun')
+
+
+app = Flask(__name__, static_url_path='')
 bootstrap = Bootstrap(app)
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    return render_template('index_1.html')
+    return render_template('index.html')
 
 # @app.route('/static/novels/<name>', methods=['GET', 'POST'])
 # def novel(name):
