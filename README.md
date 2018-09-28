@@ -47,3 +47,7 @@ Collaborators:
     |- config.py //全局配置文件，配置全局变量
     |- manage.py //启动程序
 ```
+
+# Use Command
+virtualenv --no-site-packages venv
+pip install -r requirements.txt
