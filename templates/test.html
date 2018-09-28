@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta charset="utf-8">
+                <title> BaYun </title>
+                <link rel="stylesheet" type="text/css" href="/static/css/test.css">
+        </head> 
+
+        <body>
+                <!-- Here is for novel information -->
+                <div>
+                        <img src="/static/images/headerLogo.gif">
+                        <p id="introduction">
+                            "I Have a Dream" is a public speech delivered by American civil rights activist Martin Luther King Jr.
+                            during the March on Washington for Jobs and Freedom on August 28, 1963, in which he calls for an end
+                            to racism in the United States and called for civil and economic rights. Delivered to over 250,000
+                            civil rights supporters from the steps of the Lincoln Memorial in Washington, D.C., the speech was
+                            a defining moment of the civil rights movement
+                        </p>
+
+
+                </div>
+
+                <!-- This is for chapters -->
+                <div class="chapters">
+                        <select name= “chapter1” id=”id-chapter1”>
+                                <option> Chap1 </option>
+                        </select>
+                </div>
+                <div class="chapters">
+                        <select name= “chapter2” id=”id-chapter2”>
+                                <option> Chap2 </option>
+                                <option> Chap2-2 </option>
+                        </select>
+                </div>
+
+                <script src="{{ url_for('static', filename='js/jquery.min.js') }}" ></script>
+                <script src="{{ url_for('static', filename='js/test.js') }}" ></script>
+        </body>
+</html>

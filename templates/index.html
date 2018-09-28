@@ -1,18 +1,49 @@
-<!DOCTYPE html>
-<html lang="en">
-        <head>
-                <meta charset="UTF-8">
-                <title>Bayun</title>
-                <!-- <script src="/home/huaizhi/jquery/src/jquery" type="text/javascript"></script> -->
-                <!-- <script src="bayun.js"></script> -->
-        </head>
-        <body>
-                <p> <img src="../images/scallet.jpg" alt="scallet"> </p>
-                <p> <img src="../images/JC.jpg" alt="jennifer connelly"> </p>
-                <p> <img src="images/scallet.jpg" alt="scallet"> </p>
-                <p> <img src="images/JC.jpg" alt="jennifer connelly"> </p>
-                <p> <img src="scallet.jpg" alt="scallet"> </p>
-                <p> <img src="JC.jpg" alt="jennifer connelly"> </p>
-                <p> <a href="SCHEDULE.md"><em>SCHEDULE</em></a></p>
-        </body>
-</html>
+{%extends "bootstrap/base.html" %}
+
+{% block head %}
+<meta charset="utf-8">
+<title> BaYun </title>
+<!-- <link rel="stylesheet" type="text/css" href="css/test.css"> -->
+<!-- <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='css/test.css') }}"> -->
+<link rel= "stylesheet" type= "text/css" href= "css/test.css">
+{% endblock %}
+
+
+
+{% block body %}
+<!-- Here is for novel information -->
+<div>
+        <img id="novel_image" src="{{image_path}}">
+        <p id="introduction"> {{introduction}} </p>
+</div>
+
+
+
+
+<!-- This is for chapters -->
+{% for chapter in chapters %}
+<div class="chapters">
+        <select class="branch_id">
+                {% for branch in chapter %}
+                <option value="{{branch}}"> {{branch}} </option>
+                {% endfor %}
+        </select>
+</div>
+{% endfor %}
+
+
+
+
+<script src="js/jquery.min.js" ></script>
+<script src="js/test.js" ></script>
+
+
+
+{% endblock %}
+
+
+
+<!-- <option id="{{branch}}"> branch </option> -->
+<!-- <div class="chapters" id="{{chapter}}"> -->
+<!-- <script src="{{ url_for('static', filename='js/jquery.min.js') }}" ></script> -->
+<!-- <script src="{{ url_for('static', filename='js/test.js') }}" ></script> -->

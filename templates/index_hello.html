@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+        <head>
+                <meta charset="UTF-8">
+                <title>Bayun</title>
+        </head>
+
+        <body>
+                <script src="{{ url_for('static', filename='js/jquery.min.js') }}" ></script>
+                <H1> Hello Tianping </H1>
+
+                <script type="text/javascript">
+                 $("H1").click(function() {
+                         alert("Hi");
+                 })
+                </script>
+
+                <H2> This is new Tian Ping </H2>
+
+                <p>
+                        <button name="Gone With the Wind" type="button">
+                                Gone With The Wind
+                        </button>
+                </p>
+                <p>
+                        <button name="Google" type="button" onclick="window.location.href = 'http://www.google.com'" >
+                                Google
+                        </button>
+                </p>
+
+                <p> <img id=scallet src="/static/images/scallet.jpg" alt="scallet"> </p>
+                <p> <img src="/static/images/JC.jpg" alt="jennifer connelly"> </p>
+                <p> <a href=""> <img src="/static/images/SM.jpg" alt="Sophie Marceau & Monica Anna Maria Bellucci"> </a> </p>
+                <p> <a href="/static/res/SCHEDULE.md"><em>SCHEDULE</em></a></p>
+
+                <script src="{{ url_for('static', filename = 'js/bayun.js') }}" ></script>
+        </body>
+
+</html>

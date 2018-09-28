@@ -1,7 +1,18 @@
-{%extends "base.html" %}
+{%extends "bootstrap/base.html" %}
 
-{% block title%} {{ name }} {% end block %}
+{% block title%} {{ name }} {% endblock %}
 
 {% block body %}
-{% YOU ARE READING NOVEL: {{ name }} %}
-{% end block %}
+<p> YOU ARE READING NOVEL: {{ name }} </p>
+
+{% for chapter in chapters %}
+<div class="chapters" id="{{chapter}}">
+        <select id="branch_id">
+                {% for branch in chapter %}
+                <option id="{{branch}}"> branch </option>
+                {% endfor %}
+        </select>
+</div>
+{% endfor %}
+
+{% endblock %}
