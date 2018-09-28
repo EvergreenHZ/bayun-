@@ -13,13 +13,13 @@
 ###UserTable
 |       name      | type | must | addself |
 |-----------------|------|------|---------|
-| Ut_userID       | num  | Y    | Y       |
+<!-- | Ut_userID       | num  | Y    | Y       |
 | Ut_userName     | str  | Y    |         |
 | Ut_userMail     | str  | Y    |         |
 | Ut_userPassword | str  | Y    |         |
 | Ut_userAvator   | file | N    |         |
 | Ut_userProject  | arr  | N    |         |
-| Ut_userLib      | arr  | N    |         |
+| Ut_userLib -->      | arr  | N    |         |
 |                 |      |      |         |
 
 
