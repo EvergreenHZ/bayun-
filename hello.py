@@ -8,7 +8,11 @@ bootstrap = Bootstrap(app)
 # root router
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    image_path = 'images/a1.jpg'
+    return render_template('index.html')
+
+@app.route('/bayun2novel/<imagename>', methods=['GET', 'POST'])
+def bayun2novel():
+    image_path = 'images/' + imagename
     introduction = "This is Introduction"
     chap1 = ["1-1"]
     chap2 = ['2-1', '2-2']
@@ -21,43 +25,3 @@ def get_novels(novel_id_chap_id_branch_id):
 
 if __name__ == '__main__':
     app.run(debug=True)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    # ask for a novel page
-#@app.route('/static/novels/<name>', methods=['GET', 'POST'])
-#def novel(name):
-#    print('Render Novel Page')
-#    return render_template('novel.html', name=name)
-
-#@app.route('/static/res/<name>', methods=['GET', 'POST'])
-#def res(name):
-#    return redirect('novel.html', name=name)
-
-#@app.route('/NewNovel/<name>', methods=['POST', 'GET'])
-#def newnovel(name):
-#    # Actually, get the novel information here and render the page
-#    return render_template('test.html')
-
-#@app.route('/hello/<name>', methods=['GET', 'POST'])
-#def hello(name):
-#    if request.method == 'GET':
-#        #image_name = "HELLO, GODDESS!"
-#        image_name = "SCALLET"
-#        print('HELLO, GODDESS')
-#        return render_template('novel.html', name=image_name)
-#        #return redirect(url_for('novel', name=image_name))
-#    return false

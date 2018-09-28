@@ -1,0 +1,40 @@
+{%extends "bootstrap/base.html" %}
+
+{% block head %}
+<meta charset="utf-8">
+<title> BaYun </title>
+<link rel= "stylesheet" type= "text/css" href= "css/xtp_novel_main.css">
+{% endblock %}
+
+
+
+{% block body %}
+<!-- Here is for novel information -->
+<div>
+        <img id="novel_image" src="{{image_path}}">
+        <p id="introduction"> {{introduction}} </p>
+</div>
+
+
+
+
+<!-- This is for chapters -->
+{% for chapter in chapters %}
+<div class="chapters">
+        <select class="branch_id">
+                {% for branch in chapter %}
+                <option value="{{branch}}"> {{branch}} </option>
+                {% endfor %}
+        </select>
+</div>
+{% endfor %}
+
+
+
+
+<script src="js/jquery.min.js" ></script>
+<script src="js/xtp_novel_main.js" ></script>
+
+
+
+{% endblock %}
