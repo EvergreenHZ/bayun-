@@ -49,5 +49,5 @@ Collaborators:
 ```
 
 # Use Command
-virtualenv --no-site-packages venv
-pip install -r requirements.txt
+* virtualenv --no-site-packages venv
+* pip install -r requirements.txt
