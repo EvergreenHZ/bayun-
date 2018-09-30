@@ -1,0 +1,68 @@
+{% extends "bootstrap/base.html" %}
+
+{% block head %}
+<meta charset="utf-8">
+<title>漫威太阳神:第一章 新人生的家庭问题-八韵小说网</title>
+<meta name="keywords" content="漫威太阳神,第一章 新人生的家庭问题">
+<meta name="description" content="八韵小说网提供了《漫威太阳神》干净清爽的最新文字章节：第一章 新人生的家庭问题在线免费阅读。">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="mobile-agent" content="format=html5; url=https://m.txt2.cc">
+<meta http-equiv="mobile-agent" content="format=xhtml; url=https://m.txt2.cc">
+<link rel="stylesheet" href="{{ url_for('static', filename = 'css/read.css') }}"/>
+<link rel="shortcut icon" href="{{ url_for('static', filename = 'images/logo.png') }}">
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/read_jquery.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/read_index.js') }}"></script>
+<script type="text/javascript" src="https://hm.baidu.com/hm.js?5e9234e3fb7b99b6b0adccd69f5f3b3d"></script>
+{% endblock %}
+{% block body %}
+<div class="top" style="height:70px;">
+  <div class="main">
+    <div class="lf">
+	  <img class="img-icon" style="margin-top:5px;" src="{{ url_for('static', filename = 'images/logo.png') }}" alt="" width="60" height="60">
+      <div style="color: rgb(0, 0, 0);font-size:25px;font-style:italic;float:right;vertical-align:center;margin-left:30px;margin-top:19px;">八韵小说网</div>
+    </div>
+    <div class="rt" style="margin-top:15px">
+      <a href="index.html" target="_blank"><font>站内搜索</font></a> |
+      <!-- <a href="/index.php?m=Home&c=Feedback&a=add" target="_blank">反馈留言</a> | -->
+      <a href="index.html" target="_blank">主页</a> | 
+      <a href="javascript:void(0);" onclick="AddFavorite('txt2小说网',location.href)" target="_self" rel="nofollow">收藏本书</a>
+    </div>
+  </div>
+</div>
+<div class="read_t">
+  <span>
+  </span>当前位置：<a href="index.html">八韵小说网</a> > <a href="https://txt2.cc/catagory/kefan/">科幻</a> > <a href="https://txt2.cc/book/manweitaiyangshen/">漫威太阳神</a> >  第一章 新人生的家庭问题</div>
+
+<div class="novel" style="border-top: 2px solid #208181;">
+    <h1> {{name}} </h1>
+  <br><br>
+    {% if content %}
+    <div class="yd_dtext2">{{content}}</div>
+    {% endif %}
+<div style="margin-top:30px;">
+			<select class = "branch_id" style="float:left;position:relative;left:30%;font-size:20px;">
+			    {% for branch in chapterlast %}
+                <option value ="{{branch}}">{{branch}}</option>
+                {% endfor %}
+			</select>
+			
+			<a href="index.html" style="height:20px;margin-bottom:20px;">返回目录</a>
+			
+            <select class = "branch_id" style="float:right;position:relative;right:30%;font-size:20px;">
+                {% for branch in chapternext %}
+                <option value ="{{branch}}">{{branch}}</option>
+                {% endfor %}
+			</select>
+	</div>
+</div>
+<div id="footer">
+  <p>
+  	[<a href="/map/1/" target="_blank">1</a>]&nbsp;&nbsp;[<a href="/map/2/" target="_blank">2</a>]&nbsp;&nbsp;[<a href="/map/4/" target="_blank">4</a>]&nbsp;&nbsp;[<a href="/map/5/" target="_blank">5</a>]&nbsp;&nbsp;[<a href="/map/6/" target="_blank">6</a>]&nbsp;&nbsp;[<a href="/map/7/" target="_blank">7</a>]&nbsp;&nbsp;[<a href="/map/8/" target="_blank">8</a>]&nbsp;&nbsp;[<a href="/map/9/" target="_blank">9</a>]&nbsp;&nbsp;[<a href="/map/10/" target="_blank">10</a>]&nbsp;&nbsp;[<a href="/map/11/" target="_blank">11</a>]&nbsp;&nbsp;  </p>
+  <p> 本站所有小说由网友上传，如有侵犯版权，请来信告知，本站立即予以处理。 </p>
+  <p> Copyright &copy; 2017 八韵小说网 All Rights Reserved. </p>
+  <p>八韵小说网提供免费小说，是非盈利性的免费小说阅读网站。</p>
+</div>
+<script type="text/javascript" src="{{ url_for('static', filename = 'js/read_push.js') }}"></script>
+<script src="{{ url_for('static', filename = 'js/xtp_novel_main.js') }}" ></script>
+{% endblock %}

@@ -30,8 +30,10 @@ def get_novels(novel_id_chap_id_branch_id):
     Pay attention:
     novel_read.html come from ping qi bing
     '''
+    chapterlast = []
+    chapternext = ['2-1', '2-2', '2-3']
     print(novel_id_chap_id_branch_id)
-    return render_template('novel_read.html', name=novel_id_chap_id_branch_id)
+    return render_template('read.html', name=novel_id_chap_id_branch_id, content = "this is novel content", chapternext = chapternext, chapterlast = chapterlast)
 
 if __name__ == '__main__':
     app.run(debug=True)
