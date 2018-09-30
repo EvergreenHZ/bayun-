@@ -12,7 +12,8 @@ def index():
 
 @app.route('/bayun2novel/<imagename>', methods=['GET', 'POST'])
 def bayun2novel(imagename):
-    image_path = '/images/' + imagename + '.jpg'
+    # jpg or png
+    image_path = '/images/' + imagename
     print(imagename)
     print(image_path)
     introduction = "This is Introduction"
@@ -29,6 +30,7 @@ def get_novels(novel_id_chap_id_branch_id):
     Pay attention:
     novel_read.html come from ping qi bing
     '''
+    print(novel_id_chap_id_branch_id)
     return render_template('novel_read.html', name=novel_id_chap_id_branch_id)
 
 if __name__ == '__main__':
