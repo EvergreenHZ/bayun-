@@ -1,4 +1,5 @@
 ###NovelContentTable
+
 |       name       | type | must | addself |
 |------------------|------|------|---------|
 | nCt_novelID      | num  | Y    | N       |
@@ -11,6 +12,7 @@
 |                  |      |      |         |
 
 ###UserTable
+
 |       name      | type | must | addself |
 |-----------------|------|------|---------|
 | Ut_userID       | num  | Y    | Y       |
@@ -24,6 +26,7 @@
 
 
 ###NovelPreviewTable
+
 |           name          | type | must | addself |
 |-------------------------|------|------|---------|
 | nPt_novelID             | num  | Y    | Y       |
