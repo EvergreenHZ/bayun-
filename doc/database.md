@@ -9,6 +9,7 @@
 | nCt_nodeContent  | str  | Y    |         |
 | nCt_nodeAuthorID | num  | Y    | N       |
 | nCt_nodeFatherID | str  | Y    |         |
+| nCt_novelName    | str  | Y    |         |
 |                  |      |      |         |
 
 ###UserTable
