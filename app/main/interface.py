@@ -33,5 +33,13 @@ def NovelHome_NovelInfo(novel_id):
 
     return book_info
 
+
+def Sign_in(mail, password):
+    pass
+
+
+def Sign_up(mail, username, password):
+    pass
+
 # test
 # NovelHome_Read('book1-1-1')
