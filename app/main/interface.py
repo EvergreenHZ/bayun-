@@ -45,7 +45,6 @@ def NovelHome_ShowBranchCatalog(novel_id):
     return branch_catalog
 
 
-
 def Sign_in(mail, password):
     ut = user.UserTable()
     is_sign_in = ut.sign_in(mail, password)
