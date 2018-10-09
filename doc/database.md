@@ -21,7 +21,7 @@
 | Ut_userMail     | str  | Y    |         |
 | Ut_userPassword | str  | Y    |         |
 | Ut_userAvator   | file | N    |         |
-| Ut_userProject  | arr  | N    |         |
+| Ut_userProduct  | arr  | N    |         |
 | Ut_userLib      | arr  | N    |         |
 |                 |      |      |         |
 

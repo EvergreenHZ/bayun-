@@ -49,15 +49,28 @@ class UserTable(leancloud.Object):
         return True
 
 
+    def get_user_info(self, user_id):
+        user_query = leancloud.Query(UserTable)
+        user_query.equal_to('Ut_userID', user_id)
+        user_info_o = user_query.first()
+
+        user_info = {'user_name': user_info_o.get('Ut_userName'),
+                     'user_mail': user_info_o.get('Ut_userMail'),
+                     'user_product': user_info_o.get('Ut_userProduct'),
+                     'user_lib': user_info_o.get('Ut_userLib')
+                    }
+
+        # print(user_isnfo)
+        return user_info
 
 
 
 # test
 print('user')
 
-# user_table = UserTable()
+user_table = UserTable()
 # user_table.sign_up('test_name09', 'test_mail09@test.com', 'test_password09')
 # user_table.had_user('test_mail12@test.com')
 # user_table.sign_in("test_mail@test.com", "test_passward123")
-
+user_table.get_user_info(1)
 

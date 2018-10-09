@@ -1,3 +1,5 @@
-flask
 leancloud
+flask
+flask_ckeditor
 flask_bootstrap
+wtforms

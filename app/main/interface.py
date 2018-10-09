@@ -15,7 +15,7 @@ node_id = novel_name-chapter_id-branch_id
 def NovelHome_NovelInfo(novel_id):
     # novel_id = Spit_node_id(node_id)[0]
     npt = preview.NovelPreviewTable()
-    novel_info = npt.novel_info(novel_id)
+    novel_info = npt.get_novel_info(novel_id)
     return novel_info
 
 
@@ -57,6 +57,13 @@ def Sign_up(username, mail, password):
     return is_sign_up  # bool 注册成功返回true,失败返回false
 
 
+def get_user_info(user_id):
+        ut = user.UserTable()
+        user_info = ut.get_user_info(user_id)
+        # print(user_info)
+        return user_info
+
+
 # 分解node_id 为 novel_id, chapter_id, branch_id
 def Spit_node_id(node_id):
     # 分解id
@@ -74,10 +81,13 @@ def Spit_node_id(node_id):
 
 
 
+
+
 # test
 print('test start')
 # NovelHome_NovelInfo('book1-1-1')
 # NovelHome_Read('book1-1-1')
 # Sign_in("test_mail@test.com", "test_passward")
-NovelHome_ShowBranchCatalog(1)
+# NovelHome_ShowBranchCatalog(1)
+# get_user_info(1)
 print('test end')

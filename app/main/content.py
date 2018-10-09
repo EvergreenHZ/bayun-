@@ -47,6 +47,17 @@ class NovelContentTable(leancloud.Object):
         return sorted(branch_list)
 
 
+    def add_node_content(self, novel_id, chapter_id, branch_id, node_title, node_content, node_author_id):
+        self.set('nCt_novelID', novel_id)
+        self.set('nCt_chapterID', novel_id)
+        self.set('nCt_branchID', novel_id)
+        self.set('nCt_novelID', novel_id)
+        self.set('nCt_novelID', novel_id)
+        self.set('nCt_novelID', novel_id)
+
+        self.save()
+
+
     # def test(self):
     #     print("test")
 

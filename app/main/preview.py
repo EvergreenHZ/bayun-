@@ -14,7 +14,7 @@ class NovelPreviewTable(leancloud.Object):
         return novel_id
 
 
-    def novel_info(self, novel_id):
+    def get_novel_info(self, novel_id):
         novel_query = leancloud.Query(NovelPreviewTable)
         novel_query.equal_to('nPt_novelID', novel_id)
         novel_info_o = novel_query.first()
