@@ -17,25 +17,46 @@ class NovelContentTable(leancloud.Object):
         return node_content
 
 
-    def test(self):
-        print("test")
-    # def novel_name_to_id(self, novel_name):
-    #     content_query = leancloud.Query(NovelContentTable)
-    #     content_query.equal_to('nCt_novelName', novel_name)
-    #     novel_id = content_query.first().get('nCt_novelID')
+    def get_chapter_id_list(self, novel_id):
+        content_query = leancloud.Query(NovelContentTable)
+        content_query.equal_to('nCt_novelID', novel_id)
+        content_list = content_query.find()
 
-    #     print(novel_id)
-    #     return novel_id
+        chapter_id_set = set()
+        for e in content_list:
+            # print(e.get('nCt_chapterID'))
+            chapter_id_set.add(e.get('nCt_chapterID'))
+        # print(chapter_set)
 
+        # set 已经把id排好序了
+        chapter_id_list = list(chapter_id_set)
+        return chapter_id_list
+
+
+    def get_branch_list(self, novel_id, chapter_id):
+        content_query = leancloud.Query(NovelContentTable)
+        content_query.equal_to('nCt_novelID', novel_id)
+        content_query.equal_to('nCt_chapterID', chapter_id)
+        content_list = content_query.find()
+
+        branch_list = list()
+        for e in content_list:
+            # print(e.get('nCt_branchID'))
+            branch_list.append(e.get('nCt_branchID'))
+        # print(branch_list)
+        return sorted(branch_list)
+
+
+    # def test(self):
+    #     print("test")
 
 
 
 # test
-
 print('content')
-# NovelContentTable.get_node_content(1, 1, 1)
-# NovelContentTable.novel_name_to_id('')
 
-c = NovelContentTable()
-c.test()
-c.get_node_content(1, 1, 1)
+# c = NovelContentTable()
+# c.test()
+# c.get_node_content(1, 1, 1)
+# c.get_chapter_id_list(1)
+# c.get_branch_list(1, 3)

@@ -20,7 +20,7 @@ class UserTable(leancloud.Object):
         return False
 
 
-    def add_user(self, user_name, user_mail, user_password):
+    def sign_up(self, user_name, user_mail, user_password):
         if self.had_user(user_mail):
             return False
 
@@ -30,19 +30,34 @@ class UserTable(leancloud.Object):
         self.save()
 
         print("add user successfully")
+        return True
 
 
-    # @property
-    # def user_name(self):
-    #     return self.get('Ut_userName')
+    def sign_in(self, user_mail, user_password):
+        user_query = leancloud.Query(UserTable)
+        user_query.equal_to('Ut_userMail', user_mail)
+        user_query.equal_to('Ut_userPassword', user_password)
+
+        try:
+            g = user_query.first()
+        except Exception as e:
+            print("wrong mail or password")
+            return False
+        else:
+            print("sign in successfully")
+
+        return True
+
 
 
 
 
 # test
+print('user')
 
 # user_table = UserTable()
-# user_table.add_user('test_name09', 'test_mail09@test.com', 'test_password09')
+# user_table.sign_up('test_name09', 'test_mail09@test.com', 'test_password09')
 # user_table.had_user('test_mail12@test.com')
+# user_table.sign_in("test_mail@test.com", "test_passward123")
 
-print('user')
+
