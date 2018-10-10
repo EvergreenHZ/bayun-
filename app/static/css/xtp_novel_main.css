@@ -1,0 +1,17 @@
+body {
+        margin-left:250px;
+}
+
+p {
+        margin-right:30px;
+}
+
+select{
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        padding: 5px;
+}
+div {
+        margin: 10px;
+}
