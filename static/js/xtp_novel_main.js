@@ -1,4 +1,3 @@
-
 var image_vs_novel = $("img").attr("src");
 var path_prefix = "/novels/";
 var novel_path = path_prefix + (image_vs_novel.split("/")[1]).split(".")[0];

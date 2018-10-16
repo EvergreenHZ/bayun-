@@ -10,6 +10,14 @@ bootstrap = Bootstrap(app)
 def index():
     return render_template('index.html')
 
+@app.route('/login/', methods=['GET', 'POST'])
+def login():
+    return render_template('login.html')
+
+@app.route('/register/', methods=['GET', 'POST'])
+def register():
+    return render_template('register.html')
+
 @app.route('/bayun2novel/<imagename>', methods=['GET', 'POST'])
 def bayun2novel(imagename):
     # jpg or png
