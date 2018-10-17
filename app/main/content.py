@@ -1,3 +1,4 @@
+# -*coding:utf-8*-
 import leancloud
 
 leancloud.init("E0n6tps4U4X7wf8mnWplF3Df-gzGzoHsz", "HpO8LwvQiU8uAQezDqTY18oQ")

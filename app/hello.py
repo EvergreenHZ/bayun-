@@ -1,3 +1,4 @@
+# -*coding:utf-8*-
 import sys
 sys.path.append("./main")
 
@@ -25,6 +26,9 @@ def index():
     print('index')
     return render_template('index.html')
 
+@app.route('/personalMain/', methods=['GET', 'POST'])
+def personalMain():
+    return render_template('person.html')
 
 @app.route('/login/', methods=['GET', 'POST'])
 def login():
@@ -32,13 +36,13 @@ def login():
     return render_template('login.html')
 
 
-@app.route('/index', methods=['POST'])
+@app.route('/', methods=['GET', 'POST'])
 def SignIn():
     return "fuck"
     print('signin')
     form = request.form
     print(form)
-    return render_template('index.html')
+    return render_template('person.html')
 
 
 @app.route('/forgetpwd/',methods=['GET', 'POST'])

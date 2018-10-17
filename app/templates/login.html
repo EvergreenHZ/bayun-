@@ -46,6 +46,9 @@
 									<button type="submit" class="btn btn-primary btn-block" onclick="window.location.href='{{ url_for("SignIn", usermail=1)}}'">
 										登录
 									</button>
+                  <a href="http://localhost:5000/personalMain/">
+                          <input name="登录" type="button" title="登录" value="登录"/>
+                  </a>
 								</div>
 								<div class="margin-top20 text-center">
                                     还没有创建账户？ <a href="{{url_for('register')}}">创建一个</a>
@@ -63,7 +66,5 @@
 
 	<script src="../js/jquery.min.js"></script>
 	<script src="../bootstrap/js/bootstrap.min.js"></script>
-	<script src="../js/my-login.js"></script>
-    <script src="../js/login.js"></script>
 </body>
 </html>
