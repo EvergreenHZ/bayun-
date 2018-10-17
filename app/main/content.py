@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # -*- coding:utf-8 -*-
+=======
+# -*coding:utf-8*-
+>>>>>>> 4649fb5660f87c36495aac2fb953810ee6ee3b16
 import leancloud
 
 leancloud.init("E0n6tps4U4X7wf8mnWplF3Df-gzGzoHsz", "HpO8LwvQiU8uAQezDqTY18oQ")
