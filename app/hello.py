@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 import sys
 sys.path.append("./main")
 
@@ -76,10 +77,21 @@ def get_novels(novel_id_chap_id_branch_id):
     Pay attention:
     novel_read.html come from ping qi bing
     '''
+    id = novel_id_chap_id_branch_id.split('-')
+    print(id)
+    novel_id = int(id[1])
+    chapter_id = int(id[2])
+    branch_id = int(id[3])
+    novel_content = interface.NovelHome_Read(novel_id,chapter_id,branch_id)
+
+    chaps = interface.NovelHome_ShowBranchCatalog(novel_id)
     chapterlast = []
-    chapternext = ['2-1', '2-2', '2-3']
+    if chapter_id > 1:
+        chapterlast = chaps[chapter_id-2]
+    chapternext = chaps[chapter_id]
+    print('hello')
     print(novel_id_chap_id_branch_id)
-    return render_template('read.html', name=novel_id_chap_id_branch_id, content = "this is novel content", chapternext = chapternext, chapterlast = chapterlast)
+    return render_template('read.html', name=novel_id_chap_id_branch_id, content = novel_content, chapternext = chapternext, chapterlast = chapterlast)
 
     # print(novel_id_chap_id_branch_id)
     # novel_content = interface.NovelHome_Read(1,1,1)
@@ -89,7 +101,6 @@ def get_novels(novel_id_chap_id_branch_id):
 # @app.route("/test",methods=['POST','GET'])
 # def test():
 #     return "我是测试的"
-
 
 if __name__ == '__main__':
     app.run(debug=True)
