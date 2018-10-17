@@ -10,6 +10,12 @@ bootstrap = Bootstrap(app)
 def index():
     return render_template('index.html')
 
+@app.route('/SignIn/<username>', methods=['GET', 'POST'])
+def SignIn(username):
+    print('hello')
+    print(username)
+    return render_template('index.html')
+
 @app.route('/login/', methods=['GET', 'POST'])
 def login():
     return render_template('login.html')
