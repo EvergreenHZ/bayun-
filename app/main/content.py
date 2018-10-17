@@ -49,12 +49,11 @@ class NovelContentTable(leancloud.Object):
 
     def add_node_content(self, novel_id, chapter_id, branch_id, node_title, node_content, node_author_id):
         self.set('nCt_novelID', novel_id)
-        self.set('nCt_chapterID', novel_id)
-        self.set('nCt_branchID', novel_id)
-        self.set('nCt_novelID', novel_id)
-        self.set('nCt_novelID', novel_id)
-        self.set('nCt_novelID', novel_id)
-
+        self.set('nCt_chapterID', chapter_id)
+        self.set('nCt_branchID', branch_id)
+        self.set('nCt_nodeTitle', node_title)
+        self.set('nCt_nodeContent', node_content)
+        self.set('nCt_nodeAuthorID', node_author_id)
         self.save()
 
 
@@ -67,6 +66,7 @@ class NovelContentTable(leancloud.Object):
 print('content')
 
 # c = NovelContentTable()
+# c.add_node_content(2,1,2,'node_title_2_1_2','node_content_2_1_2', 1)
 # c.test()
 # c.get_node_content(1, 1, 1)
 # c.get_chapter_id_list(1)

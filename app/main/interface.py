@@ -1,11 +1,13 @@
 import flask
 import leancloud
-from main import user
-from main import content
-from main import preview
+import user
+import content
+import preview
+
 
 # 链接leancloud数据库
 leancloud.init("E0n6tps4U4X7wf8mnWplF3Df-gzGzoHsz", "HpO8LwvQiU8uAQezDqTY18oQ")
+
 
 '''
 node_id = novel_name-chapter_id-branch_id
@@ -68,10 +70,21 @@ def Sign_up(username, mail, password):
 
 
 def get_user_info(user_id):
-        ut = user.UserTable()
-        user_info = ut.get_user_info(user_id)
-        # print(user_info)
-        return user_info
+    ut = user.UserTable()
+    user_info = ut.get_user_info(user_id)
+    # print(user_info)
+    return user_info
+
+
+def create_novel(novel_title, novel_creator_id):
+    t = preview.NovelPreviewTable()
+    t.create_novel(novel_title, novel_creator_id)
+
+
+
+def add_node_content(novel_id, chapter_id, branch_id, node_title, node_content, node_author_id):
+        c = content.NovelContentTable()
+        c.add_node_content(novel_id, chapter_id, branch_id, node_title, node_content, node_author_id)
 
 
 # 分解node_id 为 novel_id, chapter_id, branch_id
@@ -95,10 +108,12 @@ def Spit_node_id(node_id):
 
 # test
 print('interface')
-print('test start')
+# print('test start')
+# create_novel('book5', 3)
+# add_node_content(2,1,3,'node_title_2_1_3','node_content_2_1_3', 1)
 # NovelHome_NovelInfo('book1-1-1')
 # NovelHome_Read('book1-1-1')
 # Sign_in("test_mail@test.com", "test_passward")
 # NovelHome_ShowBranchCatalog(1)
 # get_user_info(1)
-print('test end')
+# print('test end')

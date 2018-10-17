@@ -8,7 +8,7 @@
 	<link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="../css/my-login.css">
 </head>
-<body class="my-login-page">
+<body  class="my-login-page">
 	<section class="h-100">
 		<div class="container h-100">
 			<div class="row justify-content-md-center h-100">
@@ -20,7 +20,7 @@
 						<div class="card-body">
 							<h4 class="card-title">登录</h4>
 							<form method="POST">
-							 
+
 								<div class="form-group">
 									<label for="email">用户名</label>
 
@@ -29,7 +29,7 @@
 
 								<div class="form-group">
 									<label for="password">密码
-										<a href="forgot.html" class="float-right">
+                                        <a href="{{url_for('forgetpwd')}}" class="float-right">
 											忘记密码?
 										</a>
 									</label>
@@ -43,18 +43,18 @@
 								</div>
 
 								<div class="form-group no-margin">
-									<button type="submit" class="btn btn-primary btn-block">
+									<button type="submit" class="btn btn-primary btn-block" onclick="window.location.href='{{ url_for("SignIn", usermail=1)}}'">
 										登录
 									</button>
 								</div>
 								<div class="margin-top20 text-center">
-                                    还没有创建账户？ <a href="{{url_for('static', filename = 'register.html')}}">创建一个</a>
+                                    还没有创建账户？ <a href="{{url_for('register')}}">创建一个</a>
 								</div>
 							</form>
 						</div>
 					</div>
 					<div class="footer">
-						Copyright &copy; 2018 &mdash; 八韵小说网 
+						Copyright &copy; 2018 &mdash; 八韵小说网
 					</div>
 				</div>
 			</div>

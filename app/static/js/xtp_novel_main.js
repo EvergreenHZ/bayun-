@@ -1,4 +1,3 @@
-
 var image_vs_novel = $("img").attr("src");
 var path_prefix = "/novels/";
 var novel_path = path_prefix + (image_vs_novel.split("/")[1]).split(".")[0];
@@ -17,6 +16,6 @@ $("select").click(function(){
         let chap_branch = $(this).find(":selected").text();
         novel_path = novel_path + "-" + chap_branch;
         alert(novel_path);
-        //window.location.href = novel_path;
-        window.location.href = "http://www.baidu.com";
+        window.location.href = novel_path;
+        //window.location.href = "http://www.baidu.com";
 });
