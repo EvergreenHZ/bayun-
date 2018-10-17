@@ -1,8 +1,8 @@
 import flask
 import leancloud
-import user
-import content
-import preview
+from main import user
+from main import content
+from main import preview
 
 # 链接leancloud数据库
 leancloud.init("E0n6tps4U4X7wf8mnWplF3Df-gzGzoHsz", "HpO8LwvQiU8uAQezDqTY18oQ")
@@ -29,6 +29,10 @@ def NovelHome_Read(novel_id, chapter_id, branch_id):
     return node_content
 
 
+'''
+输入: novel_id
+返回: 二维数组 [ [chapter1_branches] [chapter_branches] ···]
+'''
 def NovelHome_ShowBranchCatalog(novel_id):
     branch_catalog = list()  # novel_id-chapter_id-branch_id 列表
     nct = content.NovelContentTable()
@@ -38,8 +42,14 @@ def NovelHome_ShowBranchCatalog(novel_id):
         # print(novel_id, '', e)
         branch_list = nct.get_branch_list(novel_id, e)
         # print(branch_list)
+        chapter_branch = list()
+
         for i in branch_list:
-            branch_catalog.append(str(novel_id) + '-' + str(e) + '-' + str(i))
+            chapter_branch.append(str(novel_id) + '-' + str(e) + '-' + str(i))
+
+        # branch_catalog.append(str(novel_id) + '-' + str(e) + '-' + str(i))
+        branch_catalog.append(chapter_branch)
+
     # print(chapter_id_list)
     # print(branch_catalog)
     return branch_catalog
@@ -84,6 +94,7 @@ def Spit_node_id(node_id):
 
 
 # test
+print('interface')
 print('test start')
 # NovelHome_NovelInfo('book1-1-1')
 # NovelHome_Read('book1-1-1')

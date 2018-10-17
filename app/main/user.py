@@ -68,9 +68,9 @@ class UserTable(leancloud.Object):
 # test
 print('user')
 
-user_table = UserTable()
+# user_table = UserTable()
 # user_table.sign_up('test_name09', 'test_mail09@test.com', 'test_password09')
 # user_table.had_user('test_mail12@test.com')
 # user_table.sign_in("test_mail@test.com", "test_passward123")
-user_table.get_user_info(1)
+# user_table.get_user_info(1)
 
