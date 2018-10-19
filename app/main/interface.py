@@ -1,8 +1,8 @@
-<<<<<<< HEAD
-# -*- coding:utf-8 -*-
-=======
-# -*coding:utf-8*-
->>>>>>> 4649fb5660f87c36495aac2fb953810ee6ee3b16
+# <<<<<<< HEAD
+# # -*- coding:utf-8 -*-
+# =======
+# # -*coding:utf-8*-
+# >>>>>>> 4649fb5660f87c36495aac2fb953810ee6ee3b16
 import flask
 import leancloud
 import user

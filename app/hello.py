@@ -21,6 +21,27 @@ bootstrap = Bootstrap(app)
 
 
 # root router
+@app.route('/<novel_id>/show_branches', methods=['GET', 'POST'])
+def branch(novel_id):
+    print('show branch')
+    branch_catalog = interface.NovelHome_ShowBranchCatalog(novel_id)
+    #{'chapter':[branch1, branch2]}
+    chapter_branch = {}
+
+    for i in branch_catalog:
+        branch_list = []
+        for j in i:
+            _, chapter, branch = j.split('-')
+            branch_list.append(branch)
+        chapter_branch[chapter] = branch_list
+
+    chapter_list = list(chapter_branch.keys())
+    context = {
+        'chapter_branch': chapter_branch,
+        'chapter_list': chapter_list,
+    }
+    return render_template('tree_branches.html', context=context)
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     print('index')
