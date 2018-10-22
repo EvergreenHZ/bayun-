@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 import user
 import content
 
@@ -5,4 +6,4 @@ import content
 
 # c.get_novel_content(1, 1, 1)
 
-content.NovelContentTable().get_novel_content(1, 1, 1)
+# content.NovelContentTable().get_novel_content(1, 1, 1)

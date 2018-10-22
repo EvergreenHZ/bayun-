@@ -1,0 +1,32 @@
+
+	<link rel="stylesheet" href="css/jquery.treeview.css">
+	<link rel="stylesheet" href="css/screen.css">
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.cookie.js"></script>
+	<script src="js/jquery.treeview.js"></script>
+    <script type="text/javascript" src="js/demo.js"></script>
+
+<div id="tree_box">
+	<ul id="gray" class="treeview-gray treeview">
+        {% for chapter in range(1, chapter_num) %}
+            {% if chapter_branch[chapter-1] == [] %}
+            <li>
+                {{ chapter }}
+            </li>
+            {% else %}
+		    <li>
+			    <span>{{ chapter }}</span>
+                <ul>
+                    {% for i in chapter_branch[chapter-1] %}
+                    <li>
+                        {{ i }}
+                    </li>
+                    {% endfor %}
+                </ul>
+		    </li>
+            {% endif %}
+        {% endfor %}
+	</ul>
+</div>
+

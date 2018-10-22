@@ -1,3 +1,4 @@
+# -*- coding:utf-8 -*-
 import leancloud
 
 leancloud.init("E0n6tps4U4X7wf8mnWplF3Df-gzGzoHsz", "HpO8LwvQiU8uAQezDqTY18oQ")
@@ -29,6 +30,14 @@ class NovelPreviewTable(leancloud.Object):
         return novel_info
 
 
+    def create_novel(self, novel_title, novel_creator_id):
+        self.set('nPt_novelTitle', novel_title)
+        self.set('nPt_novelCreatorID', novel_creator_id)
+        participants = [novel_creator_id]
+        self.set('nPt_productParticipants', participants)
+        self.save()
+
+
 
 
 # test
@@ -36,3 +45,4 @@ print('preview')
 
 # t = NovelPreviewTable()
 # t.novel_title_to_id('book1')
+# t.create_novel('book3', 1)
