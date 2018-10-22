@@ -21,27 +21,6 @@ bootstrap = Bootstrap(app)
 
 
 # root router
-@app.route('/<novel_id>/show_branches', methods=['GET', 'POST'])
-def branch(novel_id):
-    print('show branch')
-    branch_catalog = interface.NovelHome_ShowBranchCatalog(novel_id)
-    #{'chapter':[branch1, branch2]}
-    chapter_branch = {}
-
-    for i in branch_catalog:
-        branch_list = []
-        for j in i:
-            _, chapter, branch = j.split('-')
-            branch_list.append(branch)
-        chapter_branch[chapter] = branch_list
-
-    chapter_list = list(chapter_branch.keys())
-    context = {
-        'chapter_branch': chapter_branch,
-        'chapter_list': chapter_list,
-    }
-    return render_template('tree_branches.html', context=context)
-
 @app.route('/', methods=['GET', 'POST'])
 def index():
     print('index')
@@ -91,7 +70,28 @@ def bayun2novel(imagename):
     # chap2 = ['2-1', '2-2']
     # chaps = [chap1, chap2]
     chaps = interface.NovelHome_ShowBranchCatalog(1)
-    return render_template('xtp_template_novel_main.html', image_path=image_path, introduction=introduction, chapters=chaps)
+
+    print('show branch')
+    branch_catalog = interface.NovelHome_ShowBranchCatalog(imagename)
+    # {'chapter':[branch1, branch2]}
+    chapter_branch = {}
+
+    for i in branch_catalog:
+        branch_list = []
+        for j in i:
+            _, chapter, branch = j.split('-')
+            branch_list.append(branch)
+        chapter_branch[chapter] = branch_list
+
+    chapter_list = list(chapter_branch.keys())
+    context = {
+        'chapter_branch': chapter_branch,
+        'chapter_list': chapter_list,
+        'image_path': image_path,
+        'introduction': introduction,
+        'chapters': chaps,
+    }
+    return render_template('xtp_template_novel_main.html', context=context)
 
 
 @app.route('/novels/<novel_id_chap_id_branch_id>', methods=['GET', 'POST'])
