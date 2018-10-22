@@ -17,17 +17,17 @@
 
 
 
-
+{% include "tree_branches.html" %}
 <!-- This is for chapters -->
-{% for chapter in chapters %}
-<div class="chapters">
-        <select class="branch_id">
-                {% for branch in chapter %}
-                <option value="{{branch}}"> {{branch}} </option>
-                {% endfor %}
-        </select>
-</div>
-{% endfor %}
+{#{% for chapter in chapters %}#}
+{#<div class="chapters">#}
+{#        <select class="branch_id">#}
+{#                {% for branch in chapter %}#}
+{#                <option value="{{branch}}"> {{branch}} </option>#}
+{#                {% endfor %}#}
+{#        </select>#}
+{#</div>#}
+{#{% endfor %}#}
 
 
 <script src="{{ url_for('static', filename='js/jquery.min.js') }}" ></script>

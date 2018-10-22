@@ -7,49 +7,26 @@
 	<script src="js/jquery.treeview.js"></script>
     <script type="text/javascript" src="js/demo.js"></script>
 
-
 <div id="tree_box">
 	<ul id="gray" class="treeview-gray treeview">
-{#        chapter層#}
-        {% for chapter in chapter_list[:-1] %}
-            {% if chapter_branch[chapter] == [] %}
+        {% for chapter in range(1, chapter_num) %}
+            {% if chapter_branch[chapter-1] == [] %}
             <li>
                 {{ chapter }}
             </li>
             {% else %}
-		    <li class="expandable">
-                <div class="hitarea closed-hitarea expandable-hitarea">
-                </div>
-			    <span class="">{{ chapter }}</span>
-                <ul style="display: none">
-                    {% for i in chapter_branch[chapter][:-1] %}
+		    <li>
+			    <span>{{ chapter }}</span>
+                <ul>
+                    {% for i in chapter_branch[chapter-1] %}
                     <li>
                         {{ i }}
                     </li>
                     {% endfor %}
-                    <li class="last">{{ chapter_branch[chapter][-1] }}</li>
                 </ul>
 		    </li>
             {% endif %}
         {% endfor %}
-        {% if chapter_branch[chapter_list[-1]] == [] %}
-        <li class="last">
-            {{ chapter_list[-1] }}
-        </li>
-        {% else %}
-        <li class="lastExpandable">
-            <div class="hitarea closed-hitarea expandable-hitarea">
-            </div>
-            <span class="">{{ chapter }}</span>
-            <ul style="display: none">
-                {% for i in chapter_branch[chapter][:-1] %}
-                <li>
-                    {{ i }}
-                </li>
-                {% endfor %}
-                <li class="last">{{ chapter_branch[chapter][-1] }}</li>
-            </ul>
-        </li>
-        {% endif %}
 	</ul>
 </div>
+
