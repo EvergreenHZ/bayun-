@@ -7,26 +7,72 @@
 	<script src="js/jquery.treeview.js"></script>
     <script type="text/javascript" src="js/demo.js"></script>
 
+<<<<<<< HEAD
 <div id="tree_box">
 	<ul id="gray" class="treeview-gray treeview">
         {% for chapter in range(1, chapter_num) %}
             {% if chapter_branch[chapter-1] == [] %}
+=======
+
+<div id="tree_box">
+	<ul id="gray" class="treeview-gray treeview">
+{#        chapter層#}
+        {% for chapter in chapter_list[:-1] %}
+            {% if chapter_branch[chapter] == [] %}
+>>>>>>> 9cf750cf98193b23f0c1b3e741261c819ec9ce07
             <li>
                 {{ chapter }}
             </li>
             {% else %}
+<<<<<<< HEAD
 		    <li>
 			    <span>{{ chapter }}</span>
                 <ul>
                     {% for i in chapter_branch[chapter-1] %}
+=======
+		    <li class="expandable">
+                <div class="hitarea closed-hitarea expandable-hitarea">
+                </div>
+			    <span class="">{{ chapter }}</span>
+                <ul style="display: none">
+                    {% for i in chapter_branch[chapter][:-1] %}
+>>>>>>> 9cf750cf98193b23f0c1b3e741261c819ec9ce07
                     <li>
                         {{ i }}
                     </li>
                     {% endfor %}
+<<<<<<< HEAD
+=======
+                    <li class="last">{{ chapter_branch[chapter][-1] }}</li>
+>>>>>>> 9cf750cf98193b23f0c1b3e741261c819ec9ce07
                 </ul>
 		    </li>
             {% endif %}
         {% endfor %}
+<<<<<<< HEAD
 	</ul>
 </div>
 
+=======
+        {% if chapter_branch[chapter_list[-1]] == [] %}
+        <li class="last">
+            {{ chapter_list[-1] }}
+        </li>
+        {% else %}
+        <li class="lastExpandable">
+            <div class="hitarea closed-hitarea expandable-hitarea">
+            </div>
+            <span class="">{{ chapter }}</span>
+            <ul style="display: none">
+                {% for i in chapter_branch[chapter][:-1] %}
+                <li>
+                    {{ i }}
+                </li>
+                {% endfor %}
+                <li class="last">{{ chapter_branch[chapter][-1] }}</li>
+            </ul>
+        </li>
+        {% endif %}
+	</ul>
+</div>
+>>>>>>> 9cf750cf98193b23f0c1b3e741261c819ec9ce07
