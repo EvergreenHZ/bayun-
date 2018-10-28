@@ -30,7 +30,7 @@
 {% endfor %}
 
 <div>
-        <img id="tree_disp" src="{{ url_for('static', filename='images/damnyou.jpg') }}">
+{% include "tree_branches.html" %}
 </div>
 
 <script src="{{ url_for('static', filename='js/jquery.min.js') }}" ></script>
